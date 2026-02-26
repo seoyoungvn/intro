@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vietbuild 2026</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family: 'Segoe UI', sans-serif;
+  background:#f5f7fa;
+  overflow-y:scroll;
+  scroll-snap-type: y mandatory;
+}
+
+/* SECTION */
+.section{
+  min-height:100vh;
+  width:100%;
+  scroll-snap-align:center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:80px 10%;
+  position:relative;
+  transition:all 0.8s ease;
+  opacity:0;
+  transform:translateY(50px);
+}
+
+.section.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* khoảng cách giữa page */
+.section:not(:last-child){
+  margin-bottom:100px;
+}
+
+/* PAGE 1 TEXT */
+/* PAGE 1 WRAPPER */
+.section:first-child{
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+/* HERO BOX */
+.hero{
+  max-width:950px;
+  background:white;
+  padding:60px 70px;
+  border-radius:25px;
+  box-shadow:0 30px 60px rgba(0,0,0,0.25);
+  border:1px solid rgba(255,255,255,0.3);
+  line-height:1.9;
+  position:relative;
+}
+
+/* decorative border line */
+.hero::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:8px;
+  height:100%;
+  background:linear-gradient(to bottom,#0072ff,#00c6ff);
+  border-top-left-radius:25px;
+  border-bottom-left-radius:25px;
+}
+
+/* title */
+.hero h1{
+  font-size:44px;
+  margin-bottom:35px;
+  color:#0f2027;
+  font-weight:700;
+}
+
+/* body text */
+.hero p{
+  font-size:19px;
+  margin-bottom:14px;
+  color:#333;
+}
+
+/* highlight info box */
+.hero .highlight{
+  margin-top:40px;
+  padding:30px 35px;
+  background:#f4f8fb;
+  border-radius:18px;
+  border:1px solid #e0e6ed;
+}
+
+.hero .highlight p{
+  margin-bottom:10px;
+  font-weight:500;
+  color:#222;
+}
+
+.hero h1{
+  font-size:42px;
+  margin-bottom:30px;
+  color:#111;
+}
+
+.hero p{
+  font-size:20px;
+  margin-bottom:15px;
+  color:#333;
+}
+
+.hero .highlight{
+  margin-top:40px;
+  padding:30px;
+  background:white;
+  border-radius:20px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.1);
+}
+
+.hero .highlight p{
+  margin-bottom:8px;
+  font-weight:500;
+}
+
+/* IMAGE */
+.section img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:20px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* MAP PAGE */
+.map-wrapper{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:60px;
+  width:100%;
+  max-width:1400px;
+}
+
+.map-text{
+  flex:1;
+}
+
+.map-text h1{
+  font-size:40px;
+  margin-bottom:20px;
+  color:#111;
+}
+
+.map-text p{
+  font-size:20px;
+  line-height:1.6;
+  color:#444;
+}
+
+.map-container{
+  flex:1.2;
+  height:500px;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* responsive */
+@media(max-width:900px){
+  .map-wrapper{
+    flex-direction:column;
+  }
+
+  .map-container{
+    width:100%;
+    height:400px;
+  }
+}
+
+/* PAGE 1 IMAGE WRAPPER */
+.image-wrapper{
+  position:relative;
+  width:100%;
+  height:100%;
+}
+
+/* MARQUEE */
+.marquee{
+  position:absolute;
+  top:30%;
+  left:0;
+  width:100%;
+  transform:translateY(-50%);
+  overflow:hidden;
+}
+
+/* TRACK */
+.marquee-track{
+  display:flex;
+  width:max-content;
+  animation: marqueeLoop 7s linear infinite;
+}
+
+/* TEXT */
+.marquee-text{
+  font-size:48px;
+  font-weight:800;
+  color:white;
+  white-space:nowrap;
+  margin-right:150px;
+  text-shadow:0 6px 20px rgba(0,0,0,0.8);
+}
+
+/* LOOP ANIMATION */
+@keyframes marqueeLoop{
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<section class="section">
+  <div class="image-wrapper">
+    <img src="ho.jpg" alt="Slide 2">
+
+<div class="marquee">
+  <div class="marquee-track">
+    <div class="marquee-text">
+      전기 케이블 트레이 전시회 초청장 &nbsp;&nbsp;&nbsp;
+    </div>
+    <div class="marquee-text">
+      전기 케이블 트레이 전시회 초청장 &nbsp;&nbsp;&nbsp;
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<!-- PAGE 2 -->
+<section class="section">
+  <div class="hero">
+    <h1>VIETBUILD 2026 건축박람회 초청</h1>
+
+    <p>안녕하십니까?</p>
+    <p>케이블 트레이 전문생산 기업 SEO YOUNG VN</p>
+    <p>법인장 장호영입니다.</p>
+
+    <p style="margin-top:20px;">
+      2026년 3월 26일(목) 부터 3월 30일(월) HANOI VEC에서 진행되는
+      2026 건축박람회에 초대합니다.
+    </p>
+
+    <p>
+      이번 박람회에는 통신 및 전기 가설에 사용되는 케이블 트레이를
+      출품하오니 방문하셔서 만나보시기를 바랍니다.
+    </p>
+
+    <div class="highlight">
+      <p>◆ 전시명 : VIETBUILD 2026 (건축박람회)</p>
+      <p>◆ 일정 : 2026년 3월 26일 ~ 2026년 3월 30일</p>
+      <p>◆ 관람시간 : 08:00 ~ 17:00</p>
+      <p>◆ 장소 : 하노이 VIETNAM EXPOSITION CENTER</p>
+      <p>◆ 전시품목 : CABLE TRAY / CABLE DUCT / RACE WAY</p>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 3 -->
+<section class="section">
+  <div class="map-wrapper">
+    <div class="map-text">
+      <h1>Địa điểm tổ chức</h1>
+      <p>
+        Trung Tâm Triển Lãm Việt Nam<br>
+        Đường Cầu Tứ Liên Trường Sa<br>
+        Đông Hội, Đông Anh<br>
+        Hà Nội, Việt Nam
+      </p>
+    </div>
+
+    <div class="map-container">
+      <iframe
+        width="100%"
+        height="100%"
+        frameborder="0"
+        style="border:0"
+        src="https://www.google.com/maps?q=Trung+Tam+Trien+Lam+Viet+Nam,+Duong+Cau+Tu+Lien+Truong+Sa,+Dong+Hoi,+Dong+Anh,+Ha+Noi,+Viet+Nam&output=embed"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<script>
+const sections = document.querySelectorAll('.section');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('active');
+    }
+  });
+},{ threshold: 0.3 });
+
+sections.forEach(section => observer.observe(section));
+</script>
+
+</body>
+
+</html>
