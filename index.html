@@ -321,9 +321,37 @@ const observer = new IntersectionObserver(entries => {
 },{ threshold: 0.3 });
 
 sections.forEach(section => observer.observe(section));
+
+  /* AUTO SCROLL - NO requestAnimationFrame */
+
+let autoScroll = true;
+let speed = 2;        // tốc độ scroll
+let interval = 20;    // ms (càng nhỏ càng mượt)
+
+function startAutoScroll() {
+
+  setInterval(() => {
+
+    if (!autoScroll) return;
+
+    window.scrollBy(0, speed);
+
+    // tới cuối trang -> quay lại đầu
+    if (
+      window.innerHeight + window.scrollY
+      >= document.body.scrollHeight
+    ) {
+      window.scrollTo(0, 0);
+    }
+
+  }, interval);
+}
+
+startAutoScroll();
 </script>
 
 </body>
 
 </html>
+
 
